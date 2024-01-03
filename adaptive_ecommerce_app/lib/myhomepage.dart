@@ -176,8 +176,9 @@ Widget _buildCategoryTabs() {
 
 
   Widget _shopPage() {
-  return Column(
-    children: <Widget>[
+   return SingleChildScrollView(
+    child: Column (
+      children: <Widget>[
       AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -295,8 +296,9 @@ Widget _buildCategoryTabs() {
           padding: const EdgeInsets.only(left: 10.0, top: 25.0, bottom: 40.0),
           child: _buildCategoryTabs(), // Updated category tabs with horizontal scrolling
         ),
-      Expanded(
-        child: PageView.builder(
+        Container (
+        height: 325,
+        child: PageView.builder (
           controller: PageController(
             viewportFraction: 4 / 6,
           ),
@@ -321,8 +323,9 @@ Widget _buildCategoryTabs() {
             }
           },
         ),
-      ),
+      )
     ],
+    ),
   );
 }
 
@@ -334,7 +337,8 @@ Widget build(BuildContext context) {
     backgroundColor: const Color.fromARGB(255, 240, 240, 245),
     body: SafeArea(
       child: Padding(
-      padding: EdgeInsets.only(bottom: 30.0), // Adjust the padding value as needed
+      padding: EdgeInsets.only(bottom: 30.0),
+      child: SingleChildScrollView(// Adjust the padding value as needed
       child: IndexedStack(
         index: _selectedIndex,
         children: <Widget>[
@@ -346,6 +350,7 @@ Widget build(BuildContext context) {
           Center(child: Text('Cart Page Placeholder')),
           Center(child: Text('Favorites Page Placeholder')),
           ],
+          ),
         ),
       ),
     ),

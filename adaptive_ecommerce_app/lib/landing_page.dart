@@ -52,39 +52,39 @@ import 'myhomepage.dart';
       Widget _buildContent(BuildContext context) {
         return Center(
           // Center aligns its child within itself
-          child: Column(
-            mainAxisSize: MainAxisSize.min, // Minimizes the space taken by the column
-            children: [
-              Image.network(
-                'https://via.placeholder.com/150', // Placeholder image, replace with actual image URL
-                height: 150,
-              ),
-              SizedBox(height: 20), // Provides spacing between elements
-              Text(
-                'Explore Our Products',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              ),
-              SizedBox(height: 20), // More spacing
-              ElevatedButton(
-                onPressed: () {
-                  // Navigate to the product page
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => MyHomePage()),
-                  );
-                } ,
-                child: Text('See products'),
-              ),
-              SizedBox(height: 10), // Spacing
-              ElevatedButton(
-                onPressed: () {
-                  // Placeholder for login button action
-                },
-                child: Text('Login'),
-              ),
-            ],
+          child: SingleChildScrollView( // Allows the content to scroll
+            child: Column(
+              mainAxisSize: MainAxisSize.min, // Minimizes the space taken by the column
+              children: [
+                Image.network(
+                  'https://via.placeholder.com/150',
+                  height: 150,
+                ),
+                SizedBox(height: 20),
+                Text(
+                  'Explore Our Products',
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => MyHomePage()),
+                    );
+                  },
+                  child: Text('See products'),
+                ),
+                SizedBox(height: 10),
+                ElevatedButton(
+                  onPressed: () {
+                    // Placeholder for login button action
+                  },
+                  child: Text('Login'),
+                ),
+              ],
+            ),
           ),
         );
       }
     }
-    
